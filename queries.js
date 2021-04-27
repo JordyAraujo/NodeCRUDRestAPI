@@ -1,16 +1,18 @@
 const Pool = require('pg').Pool
+require('dotenv/config');
 
 const pool = new Pool({
-    user: 'jordy',
-    host: 'localhost',
-    database: 'api',
-    password: 'trustno1',
-    port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
 })
 
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
         if (error) {
+            console.log(process.env.DB_USER);
             throw error
         }
         response.status(200).json(results.rows)
@@ -35,7 +37,7 @@ const createUser = (request, response) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`User added with ID: ${result.insertId}`)
+        response.status(201).send(`User added with ID: ${results.insertId}`)
     })
 }
 
