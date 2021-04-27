@@ -1,0 +1,25 @@
+{
+  "name": "node-crud-rest-api",
+  "version": "1.0.0",
+  "description": "This project intends to practice on creating a CRUD RESTful API in a Node.js environment running on an Express.js server and using a PostgreSQL database. It connects an Express.js server with PostgreSQL using node-postgres. The API will be able to handle the HTTP request methods that correspond to the PostgreSQL database from which the API gets its data.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordyAraujo/NodeCRUDRestAPI.git"
+  },
+  "keywords": [],
+  "author": "Jordy Araujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordyAraujo/NodeCRUDRestAPI/issues"
+  },
+  "homepage": "https://github.com/JordyAraujo/NodeCRUDRestAPI#readme"
+}
